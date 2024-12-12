@@ -8,7 +8,8 @@ const {
 } = require('./auth-middleware')
 
 
-router.post('/register',checkUsernameFree,checkPasswordLength,(req,res,next)=>{
+router.post('/register',checkUsernameFree,checkPasswordLength,(req,res,next)=>{  
+  console.log('Made it through')
   res.json('Auth Register')
 })
 
