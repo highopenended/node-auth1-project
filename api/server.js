@@ -3,13 +3,6 @@ const helmet = require("helmet");
 const cors = require("cors");
 const usersRouter = require("./users/users-router");
 const authRouter = require("./auth/auth-router");
-// const knex = require('../data/db-config')
-
-// const session = require("express-session");
-// const Store=require("connect-session-knex")(session);
-// console.log(session)
-// console.log(require("connect-session-knex"))
-
 const session = require("express-session");
 const { ConnectSessionKnexStore } = require("connect-session-knex"); // Import the class
 const knex = require("../data/db-config"); // Import your Knex configuration
@@ -49,6 +42,7 @@ server.get("/", (req, res) => {
     res.json({ api: "up" });
 });
 
+// eslint-disable-next-line no-unused-vars
 server.use((err, req, res, next) => {
     // eslint-disable-line
     res.status(err.status || 500).json({
